@@ -33,19 +33,19 @@ package body Sexagesimal_System is
       end;
    end To_Sexagesimal;
 
-   function From_Sexagesimal (Digits : Digit_Array) return Natural is
+   function From_Sexagesimal (Values : Digit_Array) return Natural is
       Result : Natural := 0;
    begin
-      if Digits'Length = 0 then
+      if Values'Length = 0 then
          raise Empty_Array_Error;
       end if;
 
-      for I in Digits'Range loop
+      for I in Values'Range loop
          --  Check for overflow before multiplying
          if Result > Natural'Last / 60 then
             raise Overflow_Error;
          end if;
-         Result := Result * 60 + Natural (Digits (I));
+         Result := Result * 60 + Natural (Values (I));
       end loop;
       
       return Result;
