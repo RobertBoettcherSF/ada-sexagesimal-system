@@ -22,8 +22,8 @@ is
      with Post => To_Sexagesimal'Result'Length > 0;
 
    --  Converts a base-60 digit array back into a natural number.
-   function From_Sexagesimal (Digits : Digit_Array) return Natural
-     with Pre => Digits'Length > 0;
+   function From_Sexagesimal (Values : Digit_Array) return Natural
+     with Pre => Values'Length > 0;
 
    -----------------------------------------------------------------------------
    --  Variant 2: Fractional / Hellenistic (Ptolemaic) Math
