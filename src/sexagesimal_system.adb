@@ -89,8 +89,8 @@ package body Sexagesimal_System is
       Abs_Deg     : constant Float := abs Decimal_Degrees;
       
       D           : Natural := Natural (Float'Truncation (Abs_Deg));
-      Remainder   : Float := Abs_Deg - Float (D);
-      Total_Secs  : Float := Remainder * 3600.0;
+      Remainder   : constant Float := Abs_Deg - Float (D);
+      Total_Secs  : constant Float := Remainder * 3600.0;
       
       M           : Natural := Natural (Float'Truncation (Total_Secs / 60.0));
       S           : Float := Total_Secs - Float (M * 60);

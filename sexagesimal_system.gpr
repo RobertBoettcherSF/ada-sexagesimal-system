@@ -1,6 +1,11 @@
 project Sexagesimal_System is
-   for Source_Dirs use (".");
+   for Source_Dirs use ("src", "tests", "demo", "third_party/terminal_ui");
    for Object_Dir  use "obj";
    for Exec_Dir    use "bin";
-   for Main        use ("tests.adb");
+   for Main        use ("tests.adb", "demo_play.adb");
+
+   package Compiler is
+      for Default_Switches ("Ada") use
+        ("-gnat2022", "-gnatwa", "-O2");
+   end Compiler;
 end Sexagesimal_System;
